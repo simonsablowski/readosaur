@@ -1,0 +1,189 @@
+html, body {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#document {
+	height: auto !important;
+	height: 100%;
+	margin: auto;
+	min-height: 100%;
+	position: relative;
+	z-index: 0;
+}
+
+#sidebar {
+	border-right: 2px solid;
+	height: 100%;
+	overflow: auto;
+	position: fixed;
+	width: 198px;
+}
+
+#head {
+	position: absolute;
+	width: 86px;
+}
+
+#logo {
+	height: 66px;
+	padding: 10px;
+	width: 66px;
+}
+
+#controls {
+	height: 56px;
+	margin-left: 86px;
+	padding: 15px 10px;
+}
+
+#controls .user, #controls .control {
+	font-weight: bold;
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+}
+
+#controls .control a {
+	display: block;
+	white-space: nowrap;
+}
+
+#menu {
+	margin-top: 20px;
+}
+
+#menu .item {
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+}
+
+#menu .item a {
+	display: block;
+	height: 18px;
+	line-height: 2;
+	padding: 0 10px 8px 12px;
+	white-space: nowrap;
+}
+
+#menu .item a img {
+	height: 16px;
+	margin-right: 6px;
+	position: relative;
+	top: 3px;
+	width: 16px;
+}
+
+#content {
+	margin-left: 200px;
+	padding-bottom: 100px;
+}
+
+#body {
+	line-height: 2.0;
+}
+
+#body h2 {
+	padding: 30px 20px 50px;
+	text-transform: uppercase;
+}
+
+#body a, #body em {
+	white-space: nowrap;
+}
+
+#body .items {
+	width: 800px;
+}
+
+#body .items .item {
+	padding: 0 20px;
+}
+
+#body .items .item .expand, #body .items .item .collapse {
+	cursor: pointer;
+}
+
+#body .items .item .title .date, #body .items .item .title .time {
+	float: right;
+	margin-left: 10px;
+}
+
+#body .items .expanded {
+	overflow: hidden;
+	margin-bottom: 2px;
+	padding: 5px 20px;
+}
+
+#body .items .expanded .title {
+	font-weight: bold;
+}
+
+#body .items .expanded table {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+#body .message {
+	padding: 30px 20px 0;
+}
+
+#body .fieldset {
+	padding: 0 20px;
+}
+
+#body .fieldset input, #popup .fieldset input {
+	border: 0 none;
+}
+
+#body .fieldset .submit, #popup .fieldset .submit {
+	padding: 1px 2px;
+}
+
+#foot {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+}
+
+#copyright {
+	padding: 6px 12px;
+}
+
+#popup {
+	border: 2px solid;
+	left: 84px;
+	line-height: 1;
+	position: fixed;
+	top: 23px;
+	z-index: 1;
+}
+
+#popup h2, #popup .fieldset {
+	padding: 10px;
+}
+
+#popup h2 {
+	font-weight: bold;
+}
+
+#popup .fieldset input {
+	margin: 5px 0;
+}
+
+#popup .fieldset .close {
+	line-height: 2.2;
+}
+
+#popup .fieldset .submit {
+	cursor: pointer;
+	float: right;
+}
+
+#body .close {
+	display: none;
+}
