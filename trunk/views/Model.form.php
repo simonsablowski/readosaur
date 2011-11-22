@@ -1,7 +1,7 @@
 <? $this->displayView('components/header.php'); ?>
 				<div id="body">
 					<h2>
-						<? echo sprintf('%s %s', $this->localize(ucfirst($mode)), $this->localize(strtolower($ObjectName))); ?>
+						<? echo isset($title) ? $title : sprintf('%s %s', $this->localize(ucfirst($mode)), $this->localize(strtolower($ObjectName))); ?>
 
 					</h2>
 					<form action="<? echo $this->link($ObjectName . '/' . ($mode != 'update' ? $mode : sprintf('%s/%s', $mode, implode('/', $Object->getPrimaryKeyValue())))); ?>" method="post">

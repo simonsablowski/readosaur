@@ -34,6 +34,7 @@
 			<div id="header">
 				<div id="message">
 					<? echo $this->localize($message); ?>
+
 				</div>
 			</div>
 <? endif; ?>
