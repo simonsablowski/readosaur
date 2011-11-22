@@ -6,6 +6,10 @@ abbr, acronym {
 	border-color: #ccc;
 }
 
+#header, #footer {
+	background-color: #fff;
+}
+
 #sidebar {
 	/*-moz-box-shadow: -3px 0 3px -3px #ddd inset;
 	-webkit-box-shadow: -3px 0 3px -3px #ddd inset;
@@ -64,10 +68,6 @@ abbr, acronym {
 #body .fieldset .submit, #popup .fieldset .submit {
 	background-color: #0db;
 	color: #fff;
-}
-
-#foot {
-	background-color: #fff;
 }
 
 #copyright {

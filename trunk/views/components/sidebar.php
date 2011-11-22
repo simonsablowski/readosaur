@@ -1,7 +1,7 @@
 <? $bp = $this->getApplication()->getConfiguration('baseUrl'); ?>
 			<div id="sidebar">
-				<div id="head">
-					<a href="<? echo $bp; ?>" title="<? echo $this->localize('stickrss'); ?>"><img id="logo" src="<? echo $bp; ?>web/img/logo.png" alt="<? echo $this->localize('stickrss'); ?>" title="<? echo $this->localize('stickrss'); ?>"/></a>
+				<div id="logo">
+					<a href="<? echo $bp; ?>" title="<? echo $this->localize('readosaur'); ?>"><img src="<? echo $bp; ?>web/img/logo.png" alt="<? echo $this->localize('readosaur'); ?>" title="<? echo $this->localize('readosaur'); ?>"/></a>
 				</div>
 				<ul id="controls">
 					<li class="user">

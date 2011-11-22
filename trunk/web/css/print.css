@@ -1,6 +1,6 @@
 @import 'screen.css';
 
-#sidebar, #foot {
+#sidebar, #footer {
 	display: none;
 }
 

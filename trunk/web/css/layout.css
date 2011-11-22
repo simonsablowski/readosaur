@@ -17,6 +17,16 @@ body > #document {
 	min-height: 100%;
 }
 
+#header, #footer {
+	height: 30px;
+	position: relative;
+	width: 100%;
+}
+
+#message, #copyright {
+	padding: 6px 12px;
+}
+
 #sidebar, #content {
 	float: left;
 	padding-bottom: 30px;
@@ -30,12 +40,12 @@ body > #document {
 	width: 198px;
 }
 
-#head {
+#logo {
 	position: absolute;
 	width: 86px;
 }
 
-#logo {
+#logo img {
 	height: 66px;
 	padding: 10px;
 	width: 66px;
@@ -150,16 +160,9 @@ body > #document {
 	padding: 1px 2px;
 }
 
-#foot {
+#footer {
 	clear: both;
-	height: 30px;
 	margin-top: -30px;
-	position: relative;
-	width: 100%;
-}
-
-#copyright {
-	padding: 6px 12px;
 }
 
 #popup {
