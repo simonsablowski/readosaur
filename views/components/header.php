@@ -30,5 +30,12 @@
 	<body>
 		<div id="popup"></div>
 		<div id="document">
+<? if (isset($message) && !empty($message)): ?>
+			<div id="header">
+				<div id="message">
+					<? echo $this->localize($message); ?>
+				</div>
+			</div>
+<? endif; ?>
 <? $this->displayView('components/sidebar.php'); ?>
 			<div id="content">
