@@ -4,12 +4,23 @@
 					<a href="<? echo $bp; ?>" title="<? echo $this->localize('readosaur'); ?>"><img src="<? echo $bp; ?>web/img/logo.png" alt="<? echo $this->localize('readosaur'); ?>" title="<? echo $this->localize('readosaur'); ?>"/></a>
 				</div>
 				<ul id="controls">
+<? if (isset($User)): ?>
 					<li class="user">
-						<? echo $this->localize('Anonymous'); ?>
+						<span<? if ($User->isTemporary()): ?> title="<? echo $this->localize('Temporary user name &ndash; to create a user account, hit \'Sign in\'!'); ?>"<? endif; ?>><? echo $User->getName(); ?></span>
 					</li>
+<? endif; ?>
 					<li class="control">
 						<a class="popup" href="<? echo $bp; ?>add-feed" title="<? echo $this->localize('Add feed'); ?>"><? echo $this->localize('Add feed'); ?></a>
 					</li>
+<? if (isset($User)): ?>
+					<li class="control">
+<? if ($User->isTemporary()): ?>
+						<a class="popup" href="<? echo $bp; ?>sign-in" title="<? echo $this->localize('Sign in'); ?>"><? echo $this->localize('Sign in'); ?></a>
+<? else: ?>
+						<a href="<? echo $bp; ?>sign-out" title="<? echo $this->localize('Sign out'); ?>"><? echo $this->localize('Sign out'); ?></a>
+<? endif; ?>
+					</li>
+<? endif; ?>
 				</ul>
 <? if (isset($Feeds)): ?>
 				<ul id="menu">

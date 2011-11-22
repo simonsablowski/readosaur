@@ -1,12 +1,6 @@
 <?php
 
-class FeedController extends Controller {
-	public function __construct() {
-		$this->setVariables(array(
-			'Feeds' => Feed::findAll()
-		));
-	}
-	
+class FeedController extends CustomController {
 	public function getFields() {
 		return array(
 			new TextField('url', 'URL', 255),
@@ -45,7 +39,7 @@ class FeedController extends Controller {
 				if (empty($key)) {
 					$Feed->setKey($this->generateKey($Feed->getName()));
 				}
-				$Feed->setIcon($this->getIcon($url));
+				$Feed->setIcon(Icon::find($url));
 				
 				$Feed->create();
 				
@@ -82,9 +76,5 @@ class FeedController extends Controller {
 		} catch (Error $Error) {
 			return $key;
 		}
-	}
-	
-	protected function getIcon($url) {
-		return Icon::find($url);
 	}
 }
