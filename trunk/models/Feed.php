@@ -47,7 +47,7 @@ class Feed extends Model {
 		return $data;
 	}
 	
-	public function loadFeedData() {
+	public function loadData() {
 		$this->setData(Syndication::getFeed($this->getUrl()));
 		
 		$this->setItems(array_map(

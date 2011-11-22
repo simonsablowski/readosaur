@@ -7,9 +7,9 @@ abbr, acronym {
 }
 
 #sidebar {
-	-moz-box-shadow: -3px 0 3px -3px #ddd inset;
+	/*-moz-box-shadow: -3px 0 3px -3px #ddd inset;
 	-webkit-box-shadow: -3px 0 3px -3px #ddd inset;
-	box-shadow: -3px 0 3px -3px #ddd inset;
+	box-shadow: -3px 0 3px -3px #ddd inset;*/
 	border-color: #fff;
 }
 
