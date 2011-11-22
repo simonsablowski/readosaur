@@ -1,4 +1,4 @@
-html, body {
+html, body, #document {
 	height: 100%;
 }
 
@@ -7,19 +7,26 @@ a {
 }
 
 #document {
-	height: auto !important;
-	height: 100%;
-	margin: auto;
-	min-height: 100%;
 	position: relative;
+	width: 100%;
 	z-index: 0;
+}
+
+body > #document {
+	height: auto;
+	min-height: 100%;
+}
+
+#sidebar, #content {
+	float: left;
+	padding-bottom: 30px;
 }
 
 #sidebar {
 	border-right: 2px solid;
 	height: 100%;
 	overflow: auto;
-	position: fixed;
+	position: relative;
 	width: 198px;
 }
 
@@ -79,8 +86,7 @@ a {
 }
 
 #content {
-	margin-left: 200px;
-	padding-bottom: 100px;
+	padding-bottom: 30px;
 }
 
 #body {
@@ -145,8 +151,10 @@ a {
 }
 
 #foot {
-	bottom: 0;
-	position: absolute;
+	clear: both;
+	height: 30px;
+	margin-top: -30px;
+	position: relative;
 	width: 100%;
 }
 

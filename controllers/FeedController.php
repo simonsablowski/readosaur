@@ -1,17 +1,17 @@
 <?php
 
 class FeedController extends Controller {
+	public function __construct() {
+		$this->setVariables(array(
+			'Feeds' => Feed::findAll()
+		));
+	}
+	
 	public function getFields() {
 		return array(
 			new TextField('url', 'URL', 255),
 			new TextField('name', 'Name', 100)
 		);
-	}
-	
-	protected function displayView($view, $variables = array()) {
-		return parent::displayView($view, array_merge(array(
-			'Feeds' => Feed::findAll()
-		), $variables));
 	}
 	
 	public function show($key) {
@@ -22,7 +22,7 @@ class FeedController extends Controller {
 		}
 		
 		$Feed = Feed::findByKey($key);
-		$Feed->loadFeedData();
+		$Feed->loadData();
 		
 		$this->displayView('Feed.show.php', array(
 			'Feed' => $Feed
@@ -37,7 +37,7 @@ class FeedController extends Controller {
 					'url' => ($url = $this->getRequest()->getData('url')),
 					'key' => ($key = $this->getRequest()->getData('key'))
 				));
-				$Feed->loadFeedData();
+				$Feed->loadData();
 				
 				if (empty($name)) {
 					$Feed->setName($Feed->getTitle());
