@@ -42,6 +42,8 @@
 										<option value="<? echo $LoadedObject->getData($primaryKey); ?>"<? echo $this->getRequest()->getData($Field->getName()) == $LoadedObject->getData($primaryKey) || ($mode == 'update' && isset($Object) && $Object->getData($Field->getName()) == $LoadedObject->getData($primaryKey)) ? ' selected="selected"' : ''; ?>><? echo $LoadedObject->getData($titleField); ?></option>
 <? endforeach; ?>
 									</select>
+<? elseif ($Field instanceof PasswordField): ?>
+									<input type="password" name="<? echo $Field->getName(); ?>" value=""/>
 <? elseif ($Field instanceof JsonEncodedField): ?>
 									<textarea name="<? echo $Field->getName(); ?>"><? echo ($value = $this->getRequest()->getData($Field->getName())) ? $value : ($mode == 'update' && isset($Object) ? $Object->getData($Field->getName()) : ''); ?></textarea>
 <? else: ?>

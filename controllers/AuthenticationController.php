@@ -3,34 +3,37 @@
 class AuthenticationController extends CustomController {
 	public function getFields() {
 		return array(
-			new TextField('name', 'Name', 20)
+			new TextField('name', 'Name', 20),
+			new PasswordField('password', 'Password')
 		);
-	}
-	
-	protected function redirect($path = NULL) {
-		if (is_null($path)) {
-			$configuration = $this->getConfiguration('Request');
-			$path = isset($configuration['defaultQuery']) ? $configuration['defaultQuery'] : NULL;
-		}
-		return parent::redirect($path);
 	}
 	
 	public function signIn() {
 		$name = $this->getRequest()->getData('name');
-		if (!empty($name)) {
-			try {
-				$User = User::findByName($name);
-			} catch (Error $Error) {
-				$User = new User(array(
-					'name' => $name
-				));
-				$User->create();
-				$User = User::findByName($name);
-				$this->getMessageHandler()->setMessage('The user account was created successfully.');
-			}
-			$this->getSession()->setData('User', $User);
+		$password = $this->getRequest()->getData('password');
+		
+		if (!empty($name) && !empty($password)) {
+			$password = sha1($password . $this->getConfiguration('passwordSalt'));
 			
-			return $this->redirect();
+			try {
+				$this->getSession()->setData('User', User::findByNameAndPassword($name, $password));
+				
+				return $this->redirect();
+			} catch (Error $Error) {
+				try {
+					$combinationWrong = FALSE;
+					User::findByName($name);
+					$combinationWrong = TRUE;
+				} catch (Error $Error) {
+					if (!$combinationWrong) {
+						return $this->redirect('User/signUp');
+					}
+					
+					$this->getMessageHandler()->setMessage('The combination of user name and password you have entered is invalid.');
+					
+					return $this->redirect('Authentication/signIn');
+				}
+			}
 		}
 		
 		return $this->displayView($this->getViewFile('form'), array(

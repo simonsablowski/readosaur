@@ -6,9 +6,11 @@ class User extends Model {
 	protected $fields = array(
 		'id',
 		'name',
+		'password',
 		'status'
 	);
 	protected $requiredFields = array(
-		'name'
+		'name',
+		'password'
 	);
 }

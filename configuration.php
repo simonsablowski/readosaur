@@ -24,7 +24,6 @@ $configuration['Request'] = array(
 	'segmentSeparator' => '/',
 	'defaultQuery' => 'Feed/index',
 	'aliasQueries' => array(
-		'((Feed|Icon|Authentication)/)(.+)' => '$1$3',
 		'(sign)-in' => 'Authentication/$1In',
 		'(sign)-out' => 'Authentication/$1Out',
 		'random(-feed)?' => 'Feed/show/',
@@ -34,3 +33,5 @@ $configuration['Request'] = array(
 );
 
 $configuration['iconType'] = 'png';
+
+$configuration['passwordSalt'] = '';

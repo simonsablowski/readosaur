@@ -4,6 +4,10 @@ abstract class CustomController extends Controller {
 	protected $User;
 	protected $Feeds;
 	
+	protected function redirect($path = NULL) {
+		header(sprintf('Location: %s', $this->link($path)));
+	}
+	
 	protected function displayView($view, $variables = array()) {
 		$this->setVariables(array(
 			'User' => $this->getUser(),
