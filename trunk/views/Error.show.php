@@ -1,4 +1,4 @@
-<? $this->displayView('components/header.php'); ?>
+<? $this->includeComponent('header.php'); ?>
 				<div id="body">
 					<div class="message">
 <? $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
@@ -18,4 +18,4 @@
 <? endforeach; ?>
 					</div>
 				</div>
-<? $this->displayView('components/footer.php'); ?>
+<? $this->includeComponent('footer.php'); ?>

@@ -1,8 +1,8 @@
-<? $this->displayView('components/header.php'); ?>
+<? $this->includeComponent('header.php'); ?>
 				<div id="body">
 					<div class="message">
 						<? echo $this->localize('Please select a feed.'); ?>
 
 					</div>
 				</div>
-<? $this->displayView('components/footer.php'); ?>
+<? $this->includeComponent('footer.php'); ?>

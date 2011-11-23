@@ -1,4 +1,4 @@
-<? $this->displayView('components/header.php'); ?>
+<? $this->includeComponent('header.php'); ?>
 				<div id="body">
 					<h2>
 						<? echo $Feed->getTitle(); ?>
@@ -24,4 +24,4 @@
 <? endforeach; ?>
 					</ul>
 				</div>
-<? $this->displayView('components/footer.php'); ?>
+<? $this->includeComponent('footer.php'); ?>

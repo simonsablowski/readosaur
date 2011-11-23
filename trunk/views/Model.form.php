@@ -1,4 +1,4 @@
-<? $this->displayView('components/header.php'); ?>
+<? $this->includeComponent('header.php'); ?>
 				<div id="body">
 					<h2>
 						<? echo isset($title) ? $title : sprintf('%s %s', $this->localize(ucfirst($mode)), $this->localize(strtolower($ObjectName))); ?>
@@ -59,4 +59,4 @@
 						</fieldset>
 					</form>
 				</div>
-<? $this->displayView('components/footer.php'); ?>
+<? $this->includeComponent('footer.php'); ?>

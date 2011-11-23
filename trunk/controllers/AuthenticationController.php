@@ -17,22 +17,17 @@ class AuthenticationController extends CustomController {
 			
 			try {
 				$this->getSession()->setData('User', User::findByNameAndPassword($name, $password));
-				
 				return $this->redirect();
 			} catch (Error $Error) {
 				try {
-					$combinationWrong = FALSE;
 					User::findByName($name);
-					$combinationWrong = TRUE;
 				} catch (Error $Error) {
-					if (!$combinationWrong) {
-						return $this->redirect('User/signUp');
-					}
-					
-					$this->getMessageHandler()->setMessage('The combination of user name and password you have entered is invalid.');
-					
-					return $this->redirect('Authentication/signIn');
+					$this->getMessageHandler()->setMessage('The user name you entered is unknown, please create a user account.');
+					return $this->redirect('User/signUp');
 				}
+				
+				$this->getMessageHandler()->setMessage('The combination of user name and password you entered is invalid.');
+				return $this->redirect('Authentication/signIn');
 			}
 		}
 		

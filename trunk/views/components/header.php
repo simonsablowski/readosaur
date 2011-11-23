@@ -38,5 +38,5 @@
 				</div>
 			</div>
 <? endif; ?>
-<? $this->displayView('components/sidebar.php'); ?>
+<? $this->includeComponent('sidebar.php'); ?>
 			<div id="content">

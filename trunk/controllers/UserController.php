@@ -23,10 +23,9 @@ class UserController extends CustomController {
 					'password' => $password
 				));
 				$User->create();
-				
 				$this->getSession()->setData('User', User::findByName($name));
-				$this->getMessageHandler()->setMessage('The user account was created successfully.');
 				
+				$this->getMessageHandler()->setMessage('The user account was created successfully.');
 				return $this->redirect();
 			}
 		}
