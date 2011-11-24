@@ -2,3 +2,8 @@ html {
 	background-image: url('../img/background.gif');
 	background-repeat: repeat-y;
 }
+
+#sidebar {
+	background-image: url('../img/sidebar.png');
+	background-repeat: repeat-x;
+}

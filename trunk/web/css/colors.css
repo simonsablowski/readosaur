@@ -18,15 +18,15 @@ abbr, acronym {
 }
 
 #controls .user {
-	color: #ccc;
+	color: #609;
 }
 
 #controls .control a {
-	color: #00d0ca;
+	color: #a0f;
 }
 
 #controls .control a:hover {
-	color: #01ded8;
+	color: #e6f;
 }
 
 #menu .item a {
@@ -49,11 +49,11 @@ abbr, acronym {
 }
 
 #body a, #body em, #body strong {
-	color: #00b8b3;
+	color: #90c;
 }
 
 #body a:hover {
-	color: #00d0ca;
+	color: #a0f;
 }
 
 #body .items .expanded {
@@ -66,7 +66,7 @@ abbr, acronym {
 }
 
 #body .fieldset .submit, #popup .fieldset .submit {
-	background-color: #01ded8;
+	background-color: #e6f;
 	color: #fff;
 }
 
@@ -88,11 +88,11 @@ abbr, acronym {
 	-webkit-box-shadow: 0 0 3px #ccc;
 	box-shadow: 0 0 3px #ccc;
 	background-color: #fff;
-	border-color: #01ded8;
+	border-color: #e6f;
 }
 
 #popup, #popup h2, #popup a {
-	color: #01ded8;
+	color: #e6f;
 }
 
 #popup .fieldset input {
